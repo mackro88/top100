@@ -14,3 +14,6 @@ CREATE TABLE reparto (
     nombre VARCHAR(150) NOT NULL,
     FOREIGN KEY (id_peliculas) REFERENCES peliculas(id)
 );
+-- Cargar ambos archivos a su tabla correspondiente
+\copy peliculas FROM 'csv/peliculas.csv' csv header;
+\copy reparto FROM 'csv/reparto.csv' csv header;
