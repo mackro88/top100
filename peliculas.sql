@@ -17,3 +17,5 @@ CREATE TABLE reparto (
 -- Cargar ambos archivos a su tabla correspondiente
 \copy peliculas FROM 'csv/peliculas.csv' csv header;
 \copy reparto FROM 'csv/reparto.csv' csv header;
+-- Listar todos los actores que aparecen en la película "Titanic", indicando el título de la película, año de estreno, director y todo el reparto.
+SELECT nombre, titulo, anio_estreno, director FROM reparto INNER JOIN peliculas ON reparto.id_peliculas = peliculas.id WHERE id_peliculas = (SELECT id FROM peliculas WHERE titulo = 'Titanic');
