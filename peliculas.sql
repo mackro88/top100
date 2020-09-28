@@ -23,3 +23,5 @@ SELECT nombre, titulo, anio_estreno, director FROM reparto INNER JOIN peliculas 
 SELECT titulo AS Películas_Harrison_Ford FROM peliculas INNER JOIN reparto ON peliculas.id = reparto.id_peliculas WHERE nombre = 'Harrison Ford';
 -- Listar los 10 directores mas populares, indicando su nombre y cuántas películas aparecen en el top 100.
 SELECT director, count(director) AS peliculas FROM peliculas GROUP BY director ORDER BY count(director) DESC LIMIT 10; 
+-- Indicar cuantos actores distintos hay
+SELECT count(distinct nombre) AS distintos FROM reparto; 
