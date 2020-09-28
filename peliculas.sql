@@ -25,3 +25,5 @@ SELECT titulo AS Películas_Harrison_Ford FROM peliculas INNER JOIN reparto ON p
 SELECT director, count(director) AS peliculas FROM peliculas GROUP BY director ORDER BY count(director) DESC LIMIT 10; 
 -- Indicar cuantos actores distintos hay
 SELECT count(distinct nombre) AS distintos FROM reparto; 
+-- Indicar las películas estrenadas entre los años 1990 y 1999 (ambos incluidos) ordenadas por título de manera ascendente.
+SELECT titulo, anio_estreno FROM peliculas WHERE anio_estreno BETWEEN 1989 AND 2000 ORDER BY titulo ASC; 
