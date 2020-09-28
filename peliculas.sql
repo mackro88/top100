@@ -27,3 +27,5 @@ SELECT director, count(director) AS peliculas FROM peliculas GROUP BY director O
 SELECT count(distinct nombre) AS distintos FROM reparto; 
 -- Indicar las películas estrenadas entre los años 1990 y 1999 (ambos incluidos) ordenadas por título de manera ascendente.
 SELECT titulo, anio_estreno FROM peliculas WHERE anio_estreno BETWEEN 1989 AND 2000 ORDER BY titulo ASC; 
+-- Listar el reparto de las películas lanzadas el año 2001
+SELECT nombre FROM reparto INNER JOIN peliculas ON reparto.id_peliculas = peliculas.id WHERE anio_estreno = 2001 ORDER BY nombre ASC; 
